@@ -79,12 +79,13 @@ interface WeatherData {
 export default function Home() {
   const [place, setPlace] = useAtom(placeAtom);
   const [loadingCity] = useAtom(loadingCityAtom);
-
+  // const API=process.env.NEXT_PUBLIC_WEATHER_KEY;
+  // console.log(API);
   const { isLoading, error, data, refetch } = useQuery<WeatherData>(
     "repoData",
     async () => {
       const { data } = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=0f25db4edbd306fff3e6a2036655fe27&cnt=56`
       );
       return data;
     }
@@ -98,7 +99,7 @@ export default function Home() {
 
   // console.log("error", error);
 
-  console.log("data", data);
+  // console.log("data", data);
 
   const uniqueDates = [
     ...new Set(
