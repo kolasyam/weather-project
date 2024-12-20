@@ -86,7 +86,7 @@ export default function Home() {
       console.log(API);
       const { data } = await axios.get(
 
-        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&cnt=56`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=cc9dfe62925095f74626e2d3874fc6c6&cnt=56`
       );
       return data;
     }
